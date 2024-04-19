@@ -1,0 +1,34 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "browser-hub"
+description = "Manage multiple browser instances without hassles."
+dynamic = ["version"]
+authors = [
+  { name="Amir Karimi", email="me@amirkarimi.dev" },
+]
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX",
+    "Topic :: Internet :: WWW/HTTP :: Browsers",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "psutil==5.9.*",
+    "pydantic==2.7.*"
+]
+
+[project.urls]
+Homepage = "https://github.com/amirkarimi/browser-hub"
+Issues = "https://github.com/amirkarimi/browser-hub/issues"
+
+[project.scripts]
+browser-hub = "browser_hub.main:cli"
+
+[tool.hatch.version]
+source = "vcs"
