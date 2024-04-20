@@ -4,7 +4,7 @@
 
 ## Problem
 
-As a consultant, we usually work with multiple clients. Separating the work
+As consultants, we usually work with multiple clients. Separating the work
 isn't difficult until you start using the browser. For example, they might have
 different Google/Outlook accounts. Add to that your personal account, and it
 quickly becomes a mess in the same browser. Another thing is the browser addons.
