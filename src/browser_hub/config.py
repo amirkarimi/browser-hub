@@ -17,7 +17,7 @@ class Browser(BaseModel):
     open_cmd: str
     process_names: List[str] = Field(min_length=1)
     cmd_includes_regex: str
-    cmd_excludes_regex: Optional[str]
+    cmd_excludes_regex: Optional[str] = Field(default=None)
 
 
 class Profile(BaseModel):
@@ -51,6 +51,6 @@ def load_config_or_exit() -> Config:
             _err(f"Config file is not valid. File: '{CONFIG_FILE_PATH}'")
             for error in err.errors():
                 msg = error["msg"]
-                field = ".".join(str(error["loc"]))
+                field = ".".join(str(f) for f in error["loc"])
                 print(f"  {field}: {msg}")
             exit(1)

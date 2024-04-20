@@ -6,17 +6,14 @@ import psutil
 def is_profile_active(names: List[str], pattern: str, exclude: Optional[str]) -> bool:
     for proc in psutil.process_iter():
         if proc.name() in names:
-            cmdline = proc.cmdline()
+            cmdline = " ".join(proc.cmdline())
 
             # Exclude pattern
-            if exclude:
-                for cmd in cmdline:
-                    if re.search(exclude, cmd):
-                        continue
+            if exclude and re.search(exclude, cmdline):
+                continue
 
-            for cmd in cmdline:
-                if re.search(pattern, cmd):
-                    return True
+            if re.search(pattern, cmdline):
+                return True
     return False
 
 

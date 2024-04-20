@@ -1,6 +1,6 @@
 > [!NOTE]  
-> This program is tested on Ubuntu 22.04 and Chrome but same concept applies to
-> other OSes and browsers.
+> This program is tested on Ubuntu 22.04 and mainly Chrome but same concept
+> applies to other OSes and browsers.
 
 ## Problem
 
@@ -71,7 +71,7 @@ Create the config folder:
 mkdir -p ~/.config/browser-hub
 ```
 
-Create `config.json` file. Here's an example:
+Create `config.json` file. Here's an example for Chrome:
 
 ```json
 {
@@ -126,6 +126,51 @@ A few examples based on this config:
 | https://console.amazon.com            | Same                                               | Active Profile based on the running process |
 | https://github.com/client1-org1/repo1 | https://ghe.client1-on-prem.com/client1-org1/repo1 | Client 1                                    |
 | https://news.ycombinator.com/         | Same                                               | Default Chrome Profile                      |
+
+### Firefox Config Example
+
+```json
+{
+  "default_browser_open_cmd": "firefox {url}",
+  "profiles": [
+    {
+      "name": "Client 1",
+      "browser": {
+        "open_cmd": "firefox -P client-1 --class client-1 \"{url}\"",
+        "process_names": [
+          "firefox"
+        ],
+        "cmd_includes_regex": "-P client-1"
+      },
+      "url_patterns": [
+        "client1-domain1",
+        "client1-domain2"
+      ]
+    },
+    {
+      "name": "Client 2",
+      "browser": {
+        "open_cmd": "firefox -P client-2 --class client-2 \"{url}\"",
+        "process_names": [
+          "firefox"
+        ],
+        "cmd_includes_regex": "-P client-2"
+      },
+      "url_patterns": [
+        "client2-domain1",
+        "client2-domain2"
+      ]
+    }
+  ],
+  "profile_specific_urls": [
+    "amazon.com",
+    "github.com",
+    ".google.com",
+    "datadoghq.com",
+    "sentry.io"
+  ]
+}
+```
 
 ### Options
 
