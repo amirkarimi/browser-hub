@@ -129,6 +129,9 @@ A few examples based on this config:
 
 ### Firefox Config Example
 
+You first need to create firefox profiles (in this example: `client-1`,
+`client-2`), then use the following config example:
+
 ```json
 {
   "default_browser_open_cmd": "firefox {url}",
@@ -137,29 +140,19 @@ A few examples based on this config:
       "name": "Client 1",
       "browser": {
         "open_cmd": "firefox -P client-1 --class client-1 \"{url}\"",
-        "process_names": [
-          "firefox"
-        ],
+        "process_names": ["firefox"],
         "cmd_includes_regex": "-P client-1"
       },
-      "url_patterns": [
-        "client1-domain1",
-        "client1-domain2"
-      ]
+      "url_patterns": ["client1-domain1", "client1-domain2"]
     },
     {
       "name": "Client 2",
       "browser": {
         "open_cmd": "firefox -P client-2 --class client-2 \"{url}\"",
-        "process_names": [
-          "firefox"
-        ],
+        "process_names": ["firefox"],
         "cmd_includes_regex": "-P client-2"
       },
-      "url_patterns": [
-        "client2-domain1",
-        "client2-domain2"
-      ]
+      "url_patterns": ["client2-domain1", "client2-domain2"]
     }
   ],
   "profile_specific_urls": [
