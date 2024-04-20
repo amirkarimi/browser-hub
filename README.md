@@ -4,13 +4,13 @@
 
 ## Problem
 
-As consultants, we usually work with multiple clients. Separating the work
-isn't difficult until you start using the browser. For example, they might have
+As consultants, we usually work with multiple clients. Separating the work isn't
+difficult until you start using the browser. For example, they might have
 different Google/Outlook accounts. Add to that your personal account, and it
-quickly becomes a mess in the same browser. Another thing is the browser addons.
-For example, if you use [Toggl](https://toggl.com/) addon to track the time, and
-both customers are using Toggl, then you should use a different account for
-each.
+quickly becomes a mess to handle in the same browser. Another thing is the
+browser extensions. Imagine you and all your clients are using
+[Toggl](https://toggl.com/) extension to track the time, and you should use a
+different account for each.
 
 You would be able to use multiple profiles in Chrome and Firefox. But there's
 another problem. Let's say you click on a link from outside the browser (e.g.,
