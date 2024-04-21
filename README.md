@@ -192,3 +192,9 @@ You first need to create firefox profiles (in this example: `client-1`,
     - `to_url`: The URL will be replaced by this string. Backreferences, such as
       `\6`, are replaced with the substring matched by group 6 in the
       `from_url_regex`.
+- `profile_specific_urls`: [Array] If the URL contains any of the specified
+  items in this field, Browser Hub will check whether any profile-specific
+  browser is running, and open the URL in that browser instance. If more than
+  one profile are running, one of them will be selected randomly (usually the
+  one that was run first). This is useful for cases where we can't recognize
+  the profile from the URL (e.g. Google Docs).
