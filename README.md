@@ -19,7 +19,7 @@ VSCode). In which profile should it be opened?
 ## Solution
 
 The solution is a program that replaces the default browser. It then decides
-which profile to open based on the domain or a keyword in the URL.
+which browser instance to open based on the domain or a keyword in the URL.
 
 <img src="./browser-hub-diagram.png" style="width: 5in;"/>
 
@@ -196,5 +196,5 @@ You first need to create firefox profiles (in this example: `client-1`,
   items in this field, Browser Hub will check whether any profile-specific
   browser is running, and open the URL in that browser instance. If more than
   one profile are running, one of them will be selected randomly (usually the
-  one that was run first). This is useful for cases where we can't recognize
-  the profile from the URL (e.g. Google Docs).
+  one that was run first). This is useful for cases where we can't recognize the
+  profile from the URL (e.g. Google Docs).
