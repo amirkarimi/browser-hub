@@ -6,7 +6,11 @@ import psutil
 def is_profile_active(names: List[str], pattern: str, exclude: Optional[str]) -> bool:
     for proc in psutil.process_iter():
         if proc.name() in names:
-            cmdline = " ".join(proc.cmdline())
+            try:
+                cmdline = " ".join(proc.cmdline())
+            except (psutil.ZombieProcess, psutil.AccessDenied):
+                # Skip zombie processes
+                continue
 
             # Exclude pattern
             if exclude and re.search(exclude, cmdline):
