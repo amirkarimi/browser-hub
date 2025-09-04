@@ -1,2 +1,2 @@
 psutil==5.9.*
-pydantic==2.7.*
+pydantic==2.11.*
