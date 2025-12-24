@@ -74,7 +74,7 @@ def cli() -> None:
         prog="browser-hub",
         description="Open the right browser profile",
     )
-    parser.add_argument("url")
+    parser.add_argument("url", nargs="?", default="", help="The URL to open (optional)")
     args = parser.parse_args()
 
     config = load_config_or_exit()
