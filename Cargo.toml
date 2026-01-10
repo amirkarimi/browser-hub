@@ -6,6 +6,7 @@ repository = "https://github.com/amirkarimi/browser-hub"
 readme = "README.md"
 version = "0.1.0"
 edition = "2024"
+license = "MIT"
 keywords = ["browser", "automation", "cli"]
 categories = ["command-line-utilities"]
 
