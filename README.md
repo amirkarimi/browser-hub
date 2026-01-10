@@ -1,5 +1,5 @@
 > [!NOTE]  
-> This program is tested on Ubuntu 22.04 and mainly Chrome but same concept
+> This program is tested on Ubuntu 22.04 and [Omarchy](https://omarchy.org/) with Chrome browser but same concept
 > applies to other OSes and browsers.
 
 ## Problem

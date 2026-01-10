@@ -4,3 +4,8 @@ __pycache__
 .mypy_cache
 *.pyc
 dist
+
+
+# Added by cargo
+
+/target
