@@ -53,7 +53,7 @@ launcher shows this:
 
 ## Install
 
-1. Install Browser Hub: `pipx install browser-hub`
+1. Install Browser Hub: `cargo install browser-hub`
 2. [Configure](#configuration) it
 3. Set Browser Hub as your default browser
 
