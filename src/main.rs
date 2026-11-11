@@ -5,8 +5,8 @@ use crate::config::{Config, Profile, load_config};
 use clap::{arg, command};
 use processes::is_profile_active;
 use regex::Regex;
-use std::process::{Command, ExitStatus};
-use std::{env, io};
+use std::io::{self, Write};
+use std::process::{Command, ExitStatus, Stdio};
 
 struct BrowserHub {
     open_url: String,
@@ -79,7 +79,21 @@ impl BrowserHub {
                 .replace("{url}", &self.open_url),
         };
 
-        Command::new("sh").arg("-c").arg(&cmd).status()
+        // Browsers (notably Chrome) print noisy diagnostics to stderr, e.g. zygote
+        // "Broken pipe" errors when handing the URL off to an already-running
+        // instance. Only surface the output if the command actually failed.
+        let output = Command::new("sh")
+            .arg("-c")
+            .arg(&cmd)
+            .stdin(Stdio::null())
+            .stdout(Stdio::null())
+            .stderr(Stdio::piped())
+            .output()?;
+
+        if !output.status.success() {
+            io::stderr().write_all(&output.stderr)?;
+        }
+        Ok(output.status)
     }
 }
 
